@@ -7,7 +7,7 @@
     </a>
     <div class="types">
       <!-- add the url param for the type  -->
-      <h3 class="types" ng-repeat="type in pokemon.types" ui-sref="type">
+      <h3 class="types" ng-repeat="type in pokemon.types" ui-sref="type ({type: type.type.name})">
           <a>{{type.type.name}}</a>
       </h3>
     </div>

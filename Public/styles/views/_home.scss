@@ -14,11 +14,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: black;
+    }
+
     img {
       width: 150px;
       height: 150px;
     }
     h2 {
+      width: auto;
       font-size: 25px;
       text-transform: capitalize;
       margin-bottom: 10px;
@@ -27,6 +37,11 @@
     h3 {
       font-size: 18px;
       text-transform: capitalize;
+    }
+
+    h3:hover {
+      cursor: pointer;
+      text-decoration: underline;
     }
 
     .types {
