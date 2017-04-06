@@ -2,6 +2,8 @@
 
 This site has 3 views, Home, pokemon, and Type. All pages have been styled and setup for the HTML all you need to do is get the JS working and URL parmeters
 
+If you swap to the start branch you can fill in all the code to get the URL parmeters to work, instructions below
+
 ### Home
 The home page will run a function and get 9 random pokemon and display their name and types.
 
