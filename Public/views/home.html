@@ -1,0 +1,15 @@
+<section class="pokemonRepeater">
+  <div class="pokemon" ng-repeat="pokemon in pokemonList">
+    <!-- add the url param for id  -->
+    <a ui-sref="pokemon">
+    <img ng-src="{{pokemon.sprites.front_default}}" alt="">
+    <h2>{{pokemon.name}}</h2>
+    </a>
+    <div class="types">
+      <!-- add the url param for the type  -->
+      <h3 class="types" ng-repeat="type in pokemon.types" ui-sref="type">
+          <a>{{type.type.name}}</a>
+      </h3>
+    </div>
+  </div>
+</section>
