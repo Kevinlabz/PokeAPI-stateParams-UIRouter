@@ -3,12 +3,10 @@ angular.module("poke").controller('pokemonCtrl', function($scope, mainService, $
   $scope.pokemon = {};
 
 $scope.getPokemon = function(id) {
-    mainService.getPokemon(id).then(function(response) {
-      console.log(response);
-      $scope.pokemon = response
-    })
+  //have this function run the getPokemon function on your service then save the result to $scope.pokemon
 }
 
-  $scope.getPokemon($stateParams.id);
+//this executes the get pokemon function. pass in the $stateParams of id to this function so the $http reqeust knows what one to get
+$scope.getPokemon();
 
 });

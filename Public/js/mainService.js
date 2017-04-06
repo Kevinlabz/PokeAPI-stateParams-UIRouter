@@ -1,13 +1,13 @@
 angular.module("poke").service('mainService', function($http){
 
   //http://pokeapi.co/api/v2/pokemon/
+  //pokemon/id can take either the name of the pokemon or the id as its parmeter
   this.getPokemon = function (id) {
     console.log('atempting');
     return $http({
       method: 'GET',
       url: 'http://pokeapi.co/api/v2/pokemon/' + id
     }).then(function(response) {
-      console.log(response.data);
       return response.data
     })
   }
