@@ -1,12 +1,15 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var annotate = require('gulp-ng-annotate');
+var gulp = require('gulp')
+,   concat = require('gulp-concat')
+,   sass = require('gulp-sass')
+,   annotate = require('gulp-ng-annotate')
+,   sourcemaps = require('gulp-sourcemaps')
+,   CacheBuster = require('gulp-cachebust')
+,   uglify = require('gulp-uglify')
+,   rename = require('gulp-rename')
+,   cssmin = require('gulp-cssmin')
+,   htmlmin = require('gulp-htmlmin');
 
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var cssmin = require('gulp-cssmin');
-var htmlmin = require('gulp-htmlmin');
+var cachebust = new CacheBuster();
 
 var paths = {
     jsSource: ['./public/js/**/*.js'],
@@ -19,10 +22,13 @@ var paths = {
 
 gulp.task('sass', function() {
     return gulp.src(paths.sassSource)
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(cachebust.resources())
         .pipe(concat('bundle.css'))
-        .pipe(cssmin())
+        .pipe(sourcemaps.write('./maps'))
         .pipe(rename({extname: ".min.css"}))
+        .pipe(cssmin())
         .pipe(gulp.dest('./dist'));
 });
 

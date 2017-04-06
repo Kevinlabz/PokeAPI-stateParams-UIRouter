@@ -2,6 +2,12 @@ angular.module("poke").controller('typeCtrl', function($scope, mainService, $sta
 
   $scope.type = {};
 
+$scope.getType = function(type) {
+    mainService.getType(type).then(function(response) {
+      $scope.type = response
+    })
+}
 
+$scope.getType($stateParams.type);
 
 });

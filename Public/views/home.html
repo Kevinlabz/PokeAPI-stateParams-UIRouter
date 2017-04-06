@@ -1,7 +1,7 @@
 <section class="pokemonRepeater">
   <div class="pokemon" ng-repeat="pokemon in pokemonList">
     <!-- add the url param for id  -->
-    <a ui-sref="pokemon">
+    <a ui-sref="pokemon ({id: pokemon.id})">
     <img ng-src="{{pokemon.sprites.front_default}}" alt="">
     <h2>{{pokemon.name}}</h2>
     </a>

@@ -13,12 +13,12 @@ angular.module("poke", ['ui.router'])
                templateUrl: '../views/pokemon.html',
                controller: 'pokemonCtrl',
                //add id param to url
-               url: '/pokemon/'
+               url: '/pokemon/:id'
            })
            .state('type', {
                templateUrl: '../views/types.html',
                controller: 'typeCtrl',
                //add type param to the url
-               url: '/type/'
+               url: '/type/:type'
            });
  });
